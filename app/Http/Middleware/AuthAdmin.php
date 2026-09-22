@@ -16,12 +16,12 @@ class AuthAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::check() && auth()->user()->utype === 'adm' || auth()->user()->utype === 'sup'){
+        $user = Auth::user();
+
+        if (Auth::check() && in_array($user->utype ?? '', ['adm', 'sup'], true)) {
             return $next($request);
         }
-        else{
-            return redirect()->route('login')->with('error', 'You are not authorized to access this page');
-        }
-        return $next($request);
+
+        return redirect()->route('login')->with('error', 'You are not authorized to access this page');
     }
 }

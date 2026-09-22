@@ -41,7 +41,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-
+<!--
 <body class="font-sans text-gray-600 antialiased">
 
     <header class="hidden lg:block bg-white shadow-sm sticky top-0 z-50">
@@ -471,7 +471,7 @@
             input.value = val < 1 ? 1 : val;
         }
     </script>
-</body>
+</body> -->
 {{--  <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
